@@ -1,0 +1,11 @@
+const insightCards = [
+  { value: '6h 24m', label: 'Deep work this week', detail: '+18% vs last week', tone: 'yellow' },
+  { value: '9:40 AM', label: 'Peak focus hour', detail: 'Your strongest window', tone: 'coral' },
+  { value: '82%', label: 'Task completion', detail: '+11% vs last week', tone: 'mint' },
+]
+
+function Insights() {
+  return <section className="page-view"><div className="page-intro"><div><p className="eyebrow">Personal analytics</p><h1>Insights<span className="coral-dot">.</span></h1><p className="subheading">Patterns from your work that can make next week easier.</p></div><select className="range-select" defaultValue="This week" aria-label="Insight time range"><option>This week</option><option>This month</option><option>Last 90 days</option></select></div><div className="insight-metrics">{insightCards.map((card) => <article className={`metric-card accent-${card.tone}`} key={card.label}><div className="metric-top"><span>{card.label}</span><span className="metric-symbol">✦</span></div><strong>{card.value}</strong><small><b>{card.detail}</b></small></article>)}</div><div className="page-columns"><section className="panel chart-panel"><div className="panel-heading"><div><p className="eyebrow">Consistency</p><h2>Focus time by day</h2></div><span className="chart-legend"><i /> Focus minutes</span></div><div className="chart"><div className="chart-labels"><span>180m</span><span>120m</span><span>60m</span><span>0m</span></div><div className="chart-lines"><i /><i /><i /><i /><div className="chart-bars"><b style={{ height: '40%' }} /><b style={{ height: '68%' }} /><b style={{ height: '52%' }} /><b style={{ height: '88%' }} /><b style={{ height: '74%' }} /><b style={{ height: '94%' }} /><b style={{ height: '28%' }} /></div><div className="chart-days"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div></div></div></section><aside className="panel recommendation"><div className="insight-icon">✧</div><p className="eyebrow">Pattern spotted</p><h2>Protect your mornings.</h2><p>You complete 2.4x more tasks before noon. Your next best move is to reserve that time for high-priority work.</p><button className="text-button">Create a focus block →</button></aside></div></section>
+}
+
+export default Insights

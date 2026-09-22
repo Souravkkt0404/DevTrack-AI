@@ -1,0 +1,15 @@
+{
+  "name": "devtrack-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered developer productivity and learning platform",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run dev:client\" \"npm run dev:server\"",
+    "start": "npm run dev",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
